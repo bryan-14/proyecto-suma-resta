@@ -17,16 +17,16 @@ public class Main {
 //    System.out.println("Número aleatorio: " + numero);
 
         String[] saludoBien={"Muy Bien","Excelente trabajo","correcto","Sigue asi"};
-        String[] saludoMal={"No es correcto, Intentalo de nuevo","Error, Vuelve a intentarlo","No te rindas"};
+        String[] saludoMal={"No es correcto, Intentalo de nuevo","Error", "Vuelve a intentarlo","No te rindas"};
 
         int asierto=0;
         int incorrecto=0;
 
         if (seleccion==1){
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 10; i++) {
 
-            int numeroMensaje1 = (int) (Math.random() * 4) + 1;
+            int numeroMensaje1 = (int) (Math.random() * 4) ;
             int numero = (int) (Math.random() * 20) + 1;
             int numero2 = (int) (Math.random() * 20) + 1;
 
@@ -37,6 +37,8 @@ public class Main {
 
             System.out.println("suma: " +numero + " + " + numero2 + " = ");
             double respuesta=teclado.nextDouble();
+
+
         if (respuesta==problema){
 
             System.out.println(saludoBien[numeroMensaje1]);
@@ -50,22 +52,29 @@ public class Main {
             incorrecto++;
 
         }
-            i++;
 
-        double porcentajeAsierto=(asierto*100)/3;
-        double porcentajeIncorrecto=(incorrecto*100)/3;
+
+        double porcentajeAsierto=(asierto*100)/10;
+        double porcentajeIncorrecto=(incorrecto*100)/10;
 
 
         System.out.println("Porcentaje de aciertos: "+porcentajeAsierto+"%");
         System.out.println("Porcentaje de errores: "+porcentajeIncorrecto+"%");
 
+
         }
+            if (asierto>=8){
+                System.out.println("FELICITACIONES");
+            }else {
+                System.out.println("SIGUELO INTENTANDO VALDRA LA PENA.");
+            }
+
 
 
     }else {
-            for (int i = 0; i < 3; i++) {
+            for (int i= 0; i < 10; i++) {
 
-                int numeroMensaje1 = (int) (Math.random() * 4) + 1;
+                int numeroMensaje1 = (int) (Math.random() * 4);
                 int numero = (int) (Math.random() * 20) + 1;
                 int numero2 = (int) (Math.random() * 20) + 1;
 
@@ -73,6 +82,7 @@ public class Main {
 
                 System.out.println("suma: " +numero + " - " + numero2 + " = ");
                 double respuesta=teclado.nextDouble();
+
                 if (respuesta==problema){
 
                     System.out.println(saludoBien[numeroMensaje1]);
@@ -86,10 +96,23 @@ public class Main {
 
                 }
 
+                double porcentajeAsierto=(asierto*100)/10;
+                double porcentajeIncorrecto=(incorrecto*100)/10;
 
-                i++;
+
+                System.out.println("Porcentaje de aciertos: "+porcentajeAsierto+"%");
+                System.out.println("Porcentaje de errores: "+porcentajeIncorrecto+"%");
+
+
+
+
+
             }
-
+            if (asierto>=8){
+                System.out.println("FELICITACIONES");
+            }else {
+                System.out.println("SIGUELO INTENTANDO VALDRA LA PENA.");
+            }
 
         }
 
